@@ -16,35 +16,53 @@ For help getting started with Flutter, view our
 samples, guidance on mobile development, and a full API reference.
 
 
-## Configurando Flutter
-- Clone o repositório do git -> git clone -b beta https://github.com/flutter/flutter.git
+## Configurando o Framework em ambiente LINUX
 
-- insira o flutter como variavel de ambiente, pegue o caminho <workspace>/flutter/bin, no meu caso coloquei no /etc/profile 
-    -> echo export PATH="$PATH:/home/projects/flutter/flutter/bin" >> /etc/profile
+**Clone o repositório do git oficial do flutter**
 
-- autualize 
-    -> source /etc/profile
+` git clone -b beta https://github.com/flutter/flutter.git`
 
-## PRONTO, agora crie um projeto 
-    -> flutter create MyProject
+**insira o flutter como variável de ambiente, pegue o caminho <workspace>/flutter/bin, no meu caso coloquei no /etc/profile **
 
-- verifique se está tudo OK antes de compilar 
-    -> flutter doctor -v
+`echo export PATH="$PATH:/home/projects/flutter/flutter/bin" >> /etc/profile`
 
-- abaixo algumas soluções para problemas que tive :
-    - [SEM SDK]    Instale a sdk caso não tenha [LINUX] 
-        -> apt-get install android-sdk
+**atualize as alterações** 
+`source /etc/profile`
+
+## Criando um projeto ...
+
+**Após ter feito os passos anteriores, basta criar ou acessar algum workspace de sua preferencia e criar o projeto**
+
+`flutter create <nomeProjeto>`
+
+**Verifique se está tudo OK antes de compilar executando o seguinte comando**
+
+`flutter doctor -v`
+
+***
+
+### **Alguns problemas que tive ...**
+
+**SEM SDK INSTALADA** - Instale a sdk caso não tenha
+
+`apt-get install android-sdk`
+ 
+**SDK 23 E FLUTTER TRABALHA COM 28** - baixe o tools atualizado direto da google 
+
+`https://developer.android.com/studio/index.html#downloads`
+
+substitua em  `/usr/lib/android-sdk/tools` pelo que foi baixado e execute 
+
+`/usr/lib/android-sdk/tools/bin/sdkmanager "platforms;android-28" "build-tools;28.0.3"`
    
-    - [SDK ANTIGA] Caso não tenha o sdkmanager baixe em [LINUX]  
-        -> https://developer.android.com/studio/index.html#downloads
-   
-    - [SDK ANTIGA & SDKMANAGER] substitua /usr/lib/android-sdk/tools pelo que foi baixado e execute para atualizar a sdk 
-        -> /usr/lib/android-sdk/tools/bin/sdkmanager "platforms;android-28" "build-tools;28.0.3"
-   
-    - [LICENÇAS SDK] para aceitar as licensas 
-        -> yes | /usr/lib/android-sdk/tools/bin/sdkmanager --licenses
+**ACEITAR LICENÇAS DA SDK**  - para aceitar as licenças 
 
-  agora basta conectar seu aparelho android no ubs e executar
-    -> flutter run
+`yes | /usr/lib/android-sdk/tools/bin/sdkmanager --licenses`
 
-    se estiver tudo certo irá abrir um aplicativo DEMO .
+***
+## OK ... BORA TESTAR!
+
+agora basta conectar seu aparelho android no ubs e executar
+
+`flutter run`
+### se estiver tudo certo irá abrir um aplicativo DEMO .
